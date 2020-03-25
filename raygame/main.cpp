@@ -14,6 +14,8 @@
 #include "Behavior.h"
 #include "KeyboardBehavior.h"
 #include "SeekBehavior.h"
+#include "FleeBehavior.h"
+#include "WanderBehavior.h"
 
 int main()
 {
@@ -24,7 +26,7 @@ int main()
 
 	InitWindow(screenWidth, screenHeight, "raylib [core] example - basic window");
 
-	SetTargetFPS(60);
+	SetTargetFPS(0);
 
 	Agent* player = new Agent();
 	player->setPosition({ 100.0f, 100.0f });
@@ -33,8 +35,8 @@ int main()
 
 	Agent* enemy = new Agent();
 	enemy->setPosition({ 500.0f, 500.0f });
-	SeekBehavior* seekBehavior = new SeekBehavior();
-	seekBehavior->setTarget(player);
+	WanderBehavior* seekBehavior = new WanderBehavior();
+	//seekBehavior->setTarget(player);
 	enemy->addBehavior(seekBehavior);
 
 	//--------------------------------------------------------------------------------------

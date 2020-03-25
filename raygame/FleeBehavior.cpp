@@ -1,11 +1,11 @@
-#include "SeekBehavior.h"
+#include "FleeBehavior.h"
 
-Vector2 SeekBehavior::update(Agent * agent, float deltaTime)
+Vector2 FleeBehavior::update(Agent* agent, float deltaTime)
 {
 	//If the target is null
 	if (agent == nullptr) {
-	//	//Return a zero vector
-		return Vector2{0,0};
+		//	//Return a zero vector
+		return Vector2{ 0,0 };
 	}
 
 	//Get this agent's position
@@ -14,7 +14,7 @@ Vector2 SeekBehavior::update(Agent * agent, float deltaTime)
 	Vector2 targetPos = m_target->getPosition();
 
 	//Calculate the vector describing the direction to the target and normalize it
-	Vector2 direction = targetPos - pos;
+	Vector2 direction = pos - targetPos;
 	direction = direction.normalize();
 	//Multiply the direction by the speed we want the agent to move
 	direction = direction * 150;

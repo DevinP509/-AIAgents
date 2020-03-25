@@ -18,6 +18,9 @@ public:
 	//add a behavior to the agent
 	void addBehavior(Behavior* behavior);
 
+	//Add a force to the Agent velocity
+	void addForce(Vector2 force);
+
 	//movement functions
 	void setPosition(Vector2 position) { m_Position = position; }
 	Vector2 getPosition() { return m_Position; }
@@ -28,6 +31,6 @@ public:
 private:
 	std::vector<Behavior*> m_BehaviorList;
 
-	Vector2 m_Position;
-	Vector2 m_Velocity;
+	Vector2 m_Position = { 0,0 };
+	Vector2 m_Velocity = { 0,0 };
 };
